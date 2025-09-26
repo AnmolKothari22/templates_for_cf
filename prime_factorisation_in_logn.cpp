@@ -55,7 +55,7 @@ int main(){
             }
         }
     }
-    //to get prime prime factoristion  just dec a element by its smallest prime and then decrease that number 
+    //to get prime prime factoristion  just divide a element by its smallest prime and then decrease that number 
     //from  its smallest prime while keeping track  of all the primes seen
 
 }
