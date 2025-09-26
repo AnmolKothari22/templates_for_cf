@@ -1,5 +1,6 @@
 
-
+#include <bits/stdc++.h>
+using namespace std;
 //*******************kahn***********************//
 
 int kahn(vector<vector<int>>&adj,int n){
