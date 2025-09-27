@@ -1,4 +1,7 @@
 
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
 
 //hash tables faster then maps
 //*************************** gp hash-table  *******************************//

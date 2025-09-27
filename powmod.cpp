@@ -1,6 +1,13 @@
 
 // below code is for nCk mod(p)
 
+
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+
+
+
 vector<ll>fact(200006); //factorial
 
 

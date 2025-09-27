@@ -1,4 +1,11 @@
 
+#include <bits/stdc++.h>
+#define ll long long 
+using namespace std;
+
+
+
+
 int n=40,q;
 vector <ll>vv;
 
