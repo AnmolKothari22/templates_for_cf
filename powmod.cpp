@@ -1,6 +1,6 @@
 
 // below code is for nCk mod(p)
-
+//use carefully
 
 #include <bits/stdc++.h>
 #define ll long long 
