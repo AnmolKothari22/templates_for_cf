@@ -3,9 +3,22 @@
 using namespace std;
 
 
-int print_v(vector<int>&v){
+void print_v(vector<int>&v){
     for(int i=0;i<v.size();i++){
         cout<<v[i]<<" ";
+    }
+}
+
+
+void print_mp(map<int,int>&mp){
+    for(auto itr = mp.begin();itr!=mp.end();itr++){
+        cout<<(itr->first)<<"=>>"<<(itr->second)<<"   ";
+    }
+}
+
+void print_set(set<int>&se){
+     for(auto itr = se.begin();itr!=se.end();itr++){
+        cout<<(*itr)<<" ";
     }
 }
 
