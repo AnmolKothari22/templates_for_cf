@@ -31,12 +31,15 @@ vector<ll> sie(){
         if(primes[i]==0){
             continue;
         }
-        ans.push_back(i);
+        if(i!=1){
+            ans.push_back(i);
+        }
         for(ll j=2*i;j<n;j=j+i){
             primes[j]=0;
         }
     } 
    // print(ans);
+   primes[1]=0;
     return ans;
 }
 
