@@ -8,10 +8,9 @@ using namespace std;
 
 
 
-vector<ll>fact(200006); //factorial
 
 
-ll powmod(ll a, ll b, ll p){
+ll binpow(ll a, ll b, ll p){
     a %= p;
     if (a == 0) return 0;
     ll product = 1;
@@ -29,9 +28,10 @@ ll powmod(ll a, ll b, ll p){
 }
 
 
+vector<ll>fact(200006); //factorial
 
 ll inv(ll a, ll p){
-    return powmod(a, p-2, p);
+    return binpow(a, p-2, p);
 }
 
 ll nCk(ll n, ll k, ll p){
