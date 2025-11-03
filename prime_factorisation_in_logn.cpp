@@ -45,7 +45,7 @@ vector<ll> sie(){
 
 
 int main(){
-    vector<ll>pri=sie();
+    vector<ll>pri=sie();//primes
  
     vector<ll>sm_p(200100); //range for number till which  you want to find prime factristion
     sm_p[1]=1;
