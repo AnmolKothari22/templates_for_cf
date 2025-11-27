@@ -58,16 +58,13 @@ struct SegTree {
         int mid = (l+r)/2;
         update(2*cur+1, l, mid, ql, qr, val);
         update(2*cur+2, mid+1, r, ql, qr, val);
-
         seg[cur] = seg[2*cur+1] + seg[2*cur+2];
     }
     // range query: sum of [ql, qr]
     long long query(int cur, int l, int r, int ql, int qr) {
         push(cur, l, r);
-
         if(r < ql || qr < l) return 0;         // no overlap
         if(ql <= l && r <= qr) return seg[cur]; // full overlap
-
         int mid = (l+r)/2;
         return query(2*cur+1, l, mid, ql, qr)  
              + query(2*cur+2, mid+1, r, ql, qr);
