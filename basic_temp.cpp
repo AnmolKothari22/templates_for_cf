@@ -37,6 +37,8 @@ void solve(){
 
 
 int main(){
+    cout <<fixed << std::setprecision(7); // Set to 7 decimal places
+    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(__null);//fast input output
     int n=1;
     cin>>n;
     while(n--){
