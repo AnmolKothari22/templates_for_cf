@@ -4,11 +4,7 @@
 
 /*
 
-ti->time of entry(declare all -1 intially)
-le_ti->least time of entry amoungst adjacent that are not parent(declare all -1 intially)
-num->used to know time(use as 1 during call)
-brid will contain all edges which are bridges(in form {min,max} )
-
+returns all bridges in a vector
               ----process----
 
 during first (and only) entering assign time(ti)
@@ -29,31 +25,35 @@ using namespace std;
 
 
 
-int brigder(int cur,int par ,vector<vector<int>>&adj,vector<int>&ti,vector<int>&le_ti,set<pair<int,int>>&brid,vector<int>&visited,int num){
-    
-    visited[cur]=1;
+vector<pair<int,int>> bridges(const vector<vector<int>>& adj) {
+    int n = adj.size();
+    vector<int> tin(n, -1), low(n, -1);
+    int timer = 0;
+    vector<pair<int,int>> res;
+    function<void(int,int)> dfs = [&](int u, int parent) {
+        tin[u] = low[u] = timer++;
 
-    ti[cur]=num;
-    le_ti[cur]=ti[cur];
+        for (int v : adj[u]) {
+            if (v == parent) continue;
 
-    for(int i=0;i<adj[cur].size();i++){
-        if(adj[cur][i]==par)continue;
-        if(visited[adj[cur][i]])continue;
-        brigder(adj[cur][i],cur,adj,ti,le_ti,brid,visited,num+1);
-    }
+            if (tin[v] != -1) {
+                // back-edge
+                low[u] = min(low[u], tin[v]);
+            } else {
+                dfs(v, u);
+                low[u] = min(low[u], low[v]);
 
-   
-
-    for(int i=0;i<adj[cur].size();i++){
-        if(adj[cur][i]==par)continue;
-        if(ti[cur]<le_ti[adj[cur][i]]){
-           brid.insert({min(cur,adj[cur][i]),max(cur,adj[cur][i])});
+                if (low[v] > tin[u]) {
+                    res.push_back({u, v}); // (u, v) is a bridge
+                }
+            }
         }
-        le_ti[cur]=min(le_ti[cur],le_ti[adj[cur][i]]);
+    };
+    for (int i = 0; i < n; i++) {
+        if (tin[i] == -1)
+            dfs(i, -1);
     }
-
-    return 0;
-
+    return res;
 }
 
 
