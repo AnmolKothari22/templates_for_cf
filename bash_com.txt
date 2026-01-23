@@ -1,0 +1,1 @@
+for fil in * ; do echo -e "\033[0;32m $fil \033[0m" && grep "tree" ${fil} ; done;
