@@ -3,10 +3,13 @@
 using namespace std;
 
 
-void print_v(vector<int>&v){
+template<typename T>
+T print_v(vector<T>&v){
     for(int i=0;i<v.size();i++){
         cout<<v[i]<<" ";
     }
+    cout<<endl;
+    return 0;
 }
 
 
