@@ -5,11 +5,16 @@ using namespace std;
 
 
 template<typename T>
-void print(T itr_start,T itr_end){
+void print_r(T itr_start,T itr_end){
     for(T itr=itr_start;itr!=itr_end;itr++){
         cout<<(*itr)<<" ";
     }
     cout<<endl;
+}
+//use print(<linear data structure(except arrays)> to print it)
+template<typename T>
+void print(T ds){
+    print(ds.begin(),ds.end());
 }
 
 
