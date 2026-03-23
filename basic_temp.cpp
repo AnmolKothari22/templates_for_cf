@@ -14,7 +14,7 @@ void print_r(T itr_start,T itr_end){
 //use print(<linear data structure(except arrays)> to print it)
 template<typename T>
 void print(T ds){
-    print(ds.begin(),ds.end());
+    print_r(ds.begin(),ds.end());
 }
 
 
