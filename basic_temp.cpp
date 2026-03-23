@@ -18,7 +18,15 @@ void print(T ds){
 }
 
 
+void dbug() {
+    cout <<endl;
+}
 
+template<typename T, typename... Args>
+void dbug(T firstArg, Args... args) { //
+    cout << firstArg << " ";
+    dbug(args...); // Recursive call for the rest of the arguments
+}
 
 
 
