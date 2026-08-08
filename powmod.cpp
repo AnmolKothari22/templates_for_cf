@@ -38,4 +38,8 @@ ll nCk(ll n, ll k, ll p){
     return ((fact[n] * inv(fact[k], p) % p) * inv(fact[n-k], p)) % p;
 }
 
+ll nPk(ll n,ll k ,ll p){
+    return (nCk(n,k,p)*fact[k])%p;
+
+}
 
