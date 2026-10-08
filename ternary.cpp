@@ -18,12 +18,6 @@ void print(T ds){
     print_r(ds.begin(),ds.end());
 }
 
-template<typename T>
-void print2Dv(vector<vector<T>> ds){
-    for(int i=0;i<ds.size();i++){
-        print(ds[i]);
-    }
-}
 
 
 void dbug() {
