@@ -75,6 +75,8 @@ int main(){
 
 /*
 
-
+botton-red 
+middle-white
+top-yellow
 
 */
