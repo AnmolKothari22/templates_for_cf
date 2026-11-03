@@ -10,7 +10,7 @@ void print_r(T itr_start,T itr_end){
     for(T itr=itr_start;itr!=itr_end;itr++){
         cout<<(*itr)<<" ";
     }
-    cout<<endl;
+    cout<<'\n';
 }
 //use print(<linear data structure(except arrays)> to print it)
 template<typename T>
